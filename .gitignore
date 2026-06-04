@@ -7,3 +7,5 @@ db.sqlite3
 *.log
 media/
 .DS_Store
+staticfiles/
+static/css/
