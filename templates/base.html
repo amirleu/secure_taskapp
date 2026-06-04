@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy - prevents XSS -->
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <title>{% block title %}Secure Task App{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <nav>
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'task_create' %}">New Task</a>
+        <a href="{% url 'profile' %}">Profile</a>
+        {% if user.is_admin_user %}
+        <a href="{% url 'audit_log' %}">Audit Logs</a>
+        {% endif %}
+        <!-- Logout uses POST form for CSRF protection -->
+        <form method="POST" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+        <span>Hello, {{ user.username }}</span>
+    </nav>
+    {% endif %}
+
+    <main>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <!-- Django auto-escapes {{ message }} - XSS safe -->
+            <div class="message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

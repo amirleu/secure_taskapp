@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}500 Server Error{% endblock %}
+{% block content %}
+<h2>500 - Server Error</h2>
+<!-- IMPORTANT: No stack trace, no system info shown to user -->
+<p>Something went wrong on our end. Please try again later.</p>
+<a href="{% url 'dashboard' %}">Go back to Dashboard</a>
+{% endblock %}

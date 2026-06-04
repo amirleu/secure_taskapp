@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Audit Log{% endblock %}
+{% block content %}
+<h2>Security Audit Log</h2>
+<p>Showing last 500 entries. Admin view only.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Time</th><th>User</th><th>Action</th>
+            <th>Description</th><th>IP Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.user|default:"Anonymous" }}</td>
+            <td>{{ log.action }}</td>
+            <td>{{ log.description }}</td>
+            <td>{{ log.ip_address }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

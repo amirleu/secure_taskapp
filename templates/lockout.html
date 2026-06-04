@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Account Locked{% endblock %}
+{% block content %}
+<h2>Account Locked</h2>
+<p>Too many failed login attempts. Please try again in 1 hour.</p>
+<a href="{% url 'login' %}">Back to Login</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Update Task{% endblock %}
+{% block content %}
+<h2>Update Task: {{ task.title }}</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Task</button>
+    <a href="{% url 'dashboard' %}">Cancel</a>
+</form>
+{% endblock %}

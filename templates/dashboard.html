@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>My Tasks ({{ task_count }})</h2>
+<a href="{% url 'task_create' %}">+ New Task</a>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th><th>Priority</th><th>Status</th><th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <!-- Django auto-escapes all variables below - XSS safe -->
+            <td>{{ task.title }}</td>
+            <td>{{ task.priority }}</td>
+            <td>{{ task.status }}</td>
+            <td>
+                <a href="{% url 'task_detail' task.id %}">View</a>
+                <a href="{% url 'task_update' task.id %}">Edit</a>
+                <a href="{% url 'task_delete' task.id %}">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">No tasks yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
