@@ -1,5 +1,7 @@
 # Secure Task Management Application
 ### IKB21503 Secure Software Development — UniKL MIIT
+<img width="1917" height="838" alt="image" src="https://github.com/user-attachments/assets/734d93e3-ee9a-4f9f-a05d-07d5e0fdac49" />
+
 
 ## Project Description
 A secure web application built with Django implementing OWASP Top 10 
