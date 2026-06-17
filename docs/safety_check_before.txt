@@ -1,0 +1,101 @@
+/home/creed/secure_taskapp/venv/lib/python3.13/site-packages/safety/auth/main.py:5: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+It will be compatible before version 2.0.0.
+  from authlib.jose.errors import ExpiredTokenError
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+
+[31m[1mDEPRECATED: [0m[33m[1mthis command (`check`) has been DEPRECATED, and will be unsupported beyond 01 June 2024.[0m
+
+
+[32mWe highly encourage switching to the new [0m[32m[1m`scan`[0m[32m command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.[0m
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+
++==============================================================================+
+
+                               /$$$$$$            /$$
+                              /$$__  $$          | $$
+           /$$$$$$$  /$$$$$$ | $$  \__//$$$$$$  /$$$$$$   /$$   /$$
+          /$$_____/ |____  $$| $$$$   /$$__  $$|_  $$_/  | $$  | $$
+         |  $$$$$$   /$$$$$$$| $$_/  | $$$$$$$$  | $$    | $$  | $$
+          \____  $$ /$$__  $$| $$    | $$_____/  | $$ /$$| $$  | $$
+          /$$$$$$$/|  $$$$$$$| $$    |  $$$$$$$  |  $$$$/|  $$$$$$$
+         |_______/  \_______/|__/     \_______/   \___/   \____  $$
+                                                          /$$  | $$
+                                                         |  $$$$$$/
+  by safetycli.com                                        \______/
+
++==============================================================================+
+
+ [1mREPORT[0m 
+
+  Safety [1mv3.8.1[0m is scanning for [1mVulnerabilities[0m[1m...[0m
+[1m  Scanning dependencies[0m in your [1menvironment:[0m
+
+  -> /home/creed/secure_taskapp/venv/lib/python3.13/site-packages
+
+  Using [1mopen-source vulnerability database[0m
+[1m  Found and scanned 72 packages[0m
+  Timestamp [1m2026-06-17 01:45:25[0m
+[1m  2[0m[1m vulnerabilities reported[0m
+[1m  0[0m[1m vulnerabilities ignored[0m
+
++==============================================================================+
+ [1mVULNERABILITIES REPORTED[0m 
++==============================================================================+
+
+[31m-> Vulnerability found in pip version 26.0.1[0m
+[1m   Vulnerability ID: [0mSFTY-20260420-60812
+[1m   Affected spec: [0m<=26.0.1
+[1m   ADVISORY: [0mAffected versions of the `pip` package are vulnerable to
+   Interpretation Conflict due to handling both concatenated tar and ZIP...
+[1m   CVE-2026-3219[0m
+[1m   For more information about this vulnerability, visit
+   [0mhttps://getsafety.com/v/SFTY-20260420-60812/97c[0m
+   To ignore this vulnerability, use PyUp vulnerability id
+   SFTY-20260420-60812 in safety’s ignore command-line argument or add the
+   ignore to your safety policy file.
+
+
+[31m-> Vulnerability found in pip version 26.0.1[0m
+[1m   Vulnerability ID: [0mSFTY-20260427-69629
+[1m   Affected spec: [0m<26.1
+[1m   ADVISORY: [0mAffected versions of the `pip` package are vulnerable to
+   Inclusion of Functionality from Untrusted Control Sphere due to the...
+[1m   CVE-2026-6357[0m
+[1m   For more information about this vulnerability, visit
+   [0mhttps://getsafety.com/v/SFTY-20260427-69629/97c[0m
+   To ignore this vulnerability, use PyUp vulnerability id
+   SFTY-20260427-69629 in safety’s ignore command-line argument or add the
+   ignore to your safety policy file.
+
+
++==============================================================================+
+   [32m[1mREMEDIATIONS[0m
+
+  2 vulnerabilities were reported in 1 package. For detailed remediation & 
+  fix recommendations, upgrade to a commercial license. 
+
++==============================================================================+
+
+ Scan was completed. 2 vulnerabilities were reported. 
+
++==============================================================================+[0m
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+
+[31m[1mDEPRECATED: [0m[33m[1mthis command (`check`) has been DEPRECATED, and will be unsupported beyond 01 June 2024.[0m
+
+
+[32mWe highly encourage switching to the new [0m[32m[1m`scan`[0m[32m command which is easier to use, more powerful, and can be set up to mimic the deprecated command if required.[0m
+
+
+[33m[1m+===========================================================================================================================================================================================+[0m
+
+

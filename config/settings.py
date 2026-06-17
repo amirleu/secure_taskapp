@@ -23,11 +23,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'axes',  # brute force protection
+    'axes',# brute force protection
+    'csp',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'csp.middleware.CSPMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',  # CSRF protection
@@ -36,6 +38,31 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'axes.middleware.AxesMiddleware',  # brute force middleware
 ]
+
+# CSP Configuration
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'",)
+CSP_IMG_SRC = ("'self'", "data:")
+CSP_FONT_SRC = ("'self'",)
+CSP_CONNECT_SRC = ("'self'",)
+CSP_BASE_URI = ("'self'",)
+CSP_FORM_ACTION = ("'self'",)
+CSP_FRAME_ANCESTORS = ("'none'",)
+CSP_OBJECT_SRC = ("'none'",)
+CSP_MEDIA_SRC = ("'self'",)
+CSP_FRAME_SRC = ("'none'",)
+CSP_WORKER_SRC = ("'self'",)
+CSP_MANIFEST_SRC = ("'self'",)
+
+# For development, you might need unsafe-inline
+# In production, use nonce-based approach
+if DEBUG:
+    CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
+    CSP_SCRIPT_SRC = ("'self'", "'unsafe-inline'")
+else:
+    CSP_STYLE_SRC = ("'self'",)
+    CSP_SCRIPT_SRC = ("'self'",)
 
 ROOT_URLCONF = 'config.urls'
 
